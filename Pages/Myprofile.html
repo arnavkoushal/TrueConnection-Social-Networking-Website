@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - TrueConnections</title>
+    <link rel="stylesheet" href="../assets/Styles/Chat.css"> <!-- Reuse the same CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body data-theme="dark">
+    <header>
+        <nav>
+            <div class="container">
+                <h2 class="logo">
+                    TrueConnections
+                </h2>
+                <div class="search-bar">
+                    <i class="uil uil-search"></i>
+                    <input type="search" placeholder="Search">
+                </div>
+                <div class="create">
+                    <a class="btn btn-primary" id="Home-link" href="home.html">Home</a>
+                    <a class="btn btn-primary" id="MyProfile-link" href="myprofile.html">MyProfile</a>
+                    <a class="btn btn-primary" id="Chat-link" href="chat.html">Chat</a>
+                    <a class="btn btn-primary" id="Logout-link" href="login.html">Logout</a>
+                    <div class="profile-photo">
+                        <img src="../assets/Images/lambo-story.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-------------------------------- MAIN ----------------------------------->
+    <main>
+        <div class="container">
+            <!----------------- LEFT SIDEBAR (Profile Info) -------------------->
+            <div class="left">
+                <div class="profile">
+                    <div class="profile-photo">
+                        <img src="../assets/Images/car1.jpg" alt="Profile Photo">
+                    </div>
+                    <div class="profile-info">
+                        <h3>GOKU</h3>
+                        <p class="text-muted">@goku</p>
+                        <p>Dragon Ball Z Fighter</p>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <h4>Posts</h4>
+                            <p>1.2K</p>
+                        </div>
+                        <div class="stat">
+                            <h4>Followers</h4>
+                            <p>10K</p>
+                        </div>
+                        <div class="stat">
+                            <h4>Following</h4>
+                            <p>500</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Edit Profile</button>
+                </div>
+            </div>
+
+            <!----------------- MIDDLE SECTION (Posts) -------------------->
+            <div class="middle">
+                <div class="feeds">
+                    <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-photo">
+                                    <img src="../assets/Images/car1.jpg" alt="Profile Photo">
+                                </div>
+                                <div class="info">
+                                    <h4>GOKU</h4>
+                                    <small>10 mins ago</small>
+                                </div>
+                            </div>
+                            <i class="uil uil-ellipsis-h"></i>
+                        </div>
+                        <div class="photo">
+                            <img src="../assets/Images/car2.jpg" alt="Post Photo">
+                        </div>
+                        <div class="action-buttons">
+                            <div class="interaction-buttons">
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </div>
+                            <i class="uil uil-bookmark"></i>
+                        </div>
+                        <div class="liked-by">
+                            <span><img src="../assets/Images/car3.jpg" alt="Liked by"></span>
+                            <span><img src="../assets/Images/car2.jpg" alt="Liked by"></span>
+                            <span><img src="../assets/Images/car1.jpg" alt="Liked by"></span>
+                            <p>Liked by <b>Vegeta</b> and <b>100 others</b></p>
+                        </div>
+                        <div class="caption">
+                            <p><b>GOKU</b> Training hard to protect the Earth! 💪</p>
+                        </div>
+                        <div class="comments">
+                            <p class="text-muted">View all 50 comments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!----------------- THEME TOGGLE -------------------->
+    <div class="theme-toggle">
+        <button id="theme-btn">
+            <i class="uil uil-moon"></i>
+        </button>
+    </div>
+
+    <script src="../assets/Scripts/Chat.js"></script>
+</body>
+</html>

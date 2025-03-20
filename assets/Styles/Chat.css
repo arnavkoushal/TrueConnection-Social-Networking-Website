@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reuse the same variables from the home page */
+:root {
+    --primary-color-hue: 252;
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 95%;
+    --white-color-lightness: 100%;
+    --color-light: hsl(260, 100%, 99%);
+    --color-white: hsl(252, 30%, var(--white-color-lightness));
+    --color-grey: hsl(252, 15%, 65%);
+    --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-success: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, var(--dark-color-lightness));
+    --color-black: hsl(252, 30%, 10%);
+
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+}
+
+[data-theme="dark"] {
+    --color-white: hsl(252, 30%, 10%); /* Dark background */
+    --color-light: hsl(0, 0%, 0%); /* Slightly lighter background */
+    --color-grey: hsl(252, 15%, 65%); /* Grey text */
+    --color-primary: hsl(0, 95%, 65%); /* Red accent */
+    --color-secondary: hsl(0, 100%, 90%); /* Light red for secondary elements */
+    --color-success: hsl(120, 95%, 65%); /* Green for success */
+    --color-danger: hsl(0, 95%, 65%); /* Red for danger */
+    --color-dark: hsl(252, 30%, 95%); /* Light text for dark background */
+    --color-black: hsl(252, 30%, 100%); /* White text for dark background */
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background: var(--color-light);
+    transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    gap: 2rem; /* Add space between left and middle sections */
+    width: 100%; /* Ensure the container takes full width */
+    max-width: 1200px; /* Optional: Set a max-width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 1rem; /* Add padding for spacing */
+}
+
+.profile-photo {
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.text-muted {
+    color: var(--color-grey);
+}
+
+/* =============== Chat Page Specific Styles ============== */
+
+/* Left Sidebar (Chat List) */
+.left {
+    width: 25%; /* Set a fixed width for the left sidebar */
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    height: calc(100vh - 5.4rem); /* Full height minus header */
+    overflow-y: auto; /* Enable scrolling */
+    position: sticky;
+    top: 5.4rem; /* Stick to the top below the header */
+}
+
+.left .sidebar h3 {
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-person {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-person:hover {
+    background: var(--color-light);
+}
+
+.chat-person .profile-photo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-person .chat-info h4 {
+    color: var(--color-dark);
+    font-size: 1rem;
+}
+
+.chat-person .chat-info p {
+    color: var(--color-grey);
+    font-size: 0.8rem;
+}
+
+
+/* Main Chat Space */
+.middle {
+    width: 75%; /* Set a fixed width for the middle section */
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    height: calc(100vh - 5.4rem); /* Full height minus header */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.chat-header .profile-photo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.chat-header .chat-info h4 {
+    color: var(--color-dark);
+    font-size: 1.2rem;
+}
+
+.chat-header .chat-info p {
+    color: var(--color-grey);
+    font-size: 0.9rem;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1; /* Take up remaining space */
+    overflow-y: auto; /* Enable scrolling */
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-light);
+    position: sticky;
+    bottom: 0;
+    background: var(--color-white); /* Match background color */
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.5rem;
+    background: var(--color-light);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--color-dark);
+}
+
+.chat-input button {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+.message {
+    max-width: 70%;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.message.received {
+    background: var(--color-light);
+    align-self: flex-start;
+}
+
+.message.sent {
+    background: var(--color-primary);
+    color: var(--color-white);
+    align-self: flex-end;
+}
+
+.message small {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--color-grey);
+}
+
+.chat-input {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-light);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.5rem;
+    background: var(--color-light);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--color-dark);
+}
+
+.chat-input button {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+#theme-btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: background 0.3s, color 0.3s;
+}
+
+#theme-btn i {
+    font-size: 1.2rem;
+}
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background: var(--color-white);
+    padding: 0.7rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+nav .search-bar {
+    background: var(--color-light);
+    border-radius: var(--border-radius);
+    padding: var(--search-padding);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav .search-bar input[type="search"] {
+    background: transparent;
+    width: 30vw;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    border: none;
+}
+
+nav .search-bar input[type="search"]::placeholder {
+    color: var(--color-grey);
+}
+
+nav .create {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav .create .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+nav .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

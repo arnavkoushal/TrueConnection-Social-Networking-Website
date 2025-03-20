@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - TrueConnections</title>
+    <link rel="stylesheet" href="../assets/Styles/Chat.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body data-theme="dark">
+    <header>
+        <nav>
+            <div class="container">
+                <h2 class="logo">
+                    TrueConnections
+                </h2>
+                <div class="search-bar">
+                    <i class="uil uil-search"></i>
+                    <input type="search" placeholder="Search">
+                </div>
+                <div class="create">
+                    <a class="btn btn-primary" id="Home-link" href="home.html">Home</a>
+                    <a class="btn btn-primary" id="MyProfile-link" href="myprofile.html">MyProfile</a>
+                    <a class="btn btn-primary" id="Chat-link" href="chat.html">Chat</a>
+                    <a class="btn btn-primary" id="Logout-link" href="login.html">Logout</a>
+                    <div class="profile-photo">
+                        <img src="../assets/Images/lambo-story.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-------------------------------- MAIN ----------------------------------->
+    <main>
+        <div class="container">
+            <!----------------- LEFT SIDEBAR (Chat List) -------------------->
+            <div class="left">
+                <div class="sidebar">
+                    <h3>Chats</h3>
+                    <div class="chat-list">
+                        <div class="chat-person">
+                            <div class="profile-photo">
+                                <img src="../assets/Images/car1.jpg" alt="GOKU">
+                            </div>
+                            <div class="chat-info">
+                                <h4>GOKU</h4>
+                                <p class="text-muted">Hey, how are you?</p>
+                            </div>
+                        </div>
+                        <div class="chat-person">
+                            <div class="profile-photo">
+                                <img src="../assets/Images/car2.jpg" alt="Vegeta">
+                            </div>
+                            <div class="chat-info">
+                                <h4>Vegeta</h4>
+                                <p class="text-muted">See you tomorrow!</p>
+                            </div>
+                        </div>
+                        <div class="chat-person">
+                            <div class="profile-photo">
+                                <img src="../assets/Images/car3.jpg" alt="Master Roshi">
+                            </div>
+                            <div class="chat-info">
+                                <h4>Master Roshi</h4>
+                                <p class="text-muted">Let's train!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!----------------- MAIN CHAT SPACE -------------------->
+            <div class="middle">
+                <div class="chat-header">
+                    <div class="profile-photo">
+                        <img src="../assets/Images/car1.jpg" alt="GOKU">
+                    </div>
+                    <div class="chat-info">
+                        <h4>GOKU</h4>
+                        <p class="text-muted">Online</p>
+                    </div>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="message received">
+                        <p>Hey, how are you?</p>
+                        <small>10:00 AM</small>
+                    </div>
+                    <div class="message sent">
+                        <p>I'm good, thanks! How about you?</p>
+                        <small>10:01 AM</small>
+                    </div>
+                    <div class="message received">
+                        <p>I'm doing great. Let's catch up soon!</p>
+                        <small>10:02 AM</small>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!----------------- THEME TOGGLE -------------------->
+    <div class="theme-toggle">
+        <button id="theme-btn">
+            <i class="uil uil-moon"></i>
+        </button>
+    </div>
+
+    <script src="../assets/Scripts/Chat.js"></script>
+</body>
+</html>

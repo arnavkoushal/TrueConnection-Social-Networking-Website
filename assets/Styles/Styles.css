@@ -1,0 +1,110 @@
+/* Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Full-Screen Banner */
+.banner {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Animations */
+.banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/');
+    background-size: cover;
+    background-position: center;
+    animation: bgZoomIn 4s ease-in-out 1 forwards;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/after.png');
+    background-size: cover;
+    background-position: top;
+    transform: scale(2);
+    animation: bgZoomOut 4s ease-in-out 1 forwards;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Keyframes for Background */
+@keyframes bgZoomIn {
+    from {
+        transform: scale(1.2);
+    } 
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes bgZoomOut {
+    from {
+        transform: scale(1);
+    } 
+    to {
+        transform: scale(2);
+    }
+}
+
+/* SVG Logo Animation */
+svg text {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 2;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: textDraw 4s ease-in-out forwards;
+}
+
+/* Text Animation */
+@keyframes textDraw {
+    0% {
+        stroke-dashoffset: 300;
+    }
+    80% {
+        fill: transparent;
+    }
+    100% {
+        fill: white;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Enter Store Button */
+.enter-btn {
+    text-decoration: none;
+    background: white;
+    color: black;
+    font-size: 24px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.enter-btn:hover {
+    background: #ff4500;
+    color: white;
+    transform: scale(1.1);
+}
