@@ -54,7 +54,7 @@ Clone the repository:
 
 bash
 Copy
-git clone https://github.com/your-username/TrueConnections-Frontend.git
+git clone https://github.com/arnavkoushal/TrueConnections-Frontend.git
 cd TrueConnections-Frontend
 Open the website:
 
