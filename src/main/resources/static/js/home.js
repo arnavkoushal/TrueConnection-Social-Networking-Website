@@ -9,15 +9,15 @@ function navigateTo(page) {
   });
   
   document.getElementById('MyProfile-link').addEventListener('click', () => {
-    navigateTo('Myprofile.html');
+    navigateTo('/Pages/Myprofile.html');
   });
   
   document.getElementById('Chat-link').addEventListener('click', () => {
-    navigateTo('chat.html');
+    navigateTo('/Pages/Chat.html');
   });
 
   document.getElementById('Logout-link').addEventListener('click', () => {
-    navigateTo('login.html');
+    navigateTo('/Pages/login.html');
   });
   // Theme Toggle
 const themeBtn = document.getElementById('theme-btn');

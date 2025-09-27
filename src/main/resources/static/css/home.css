@@ -264,11 +264,11 @@ main .container .left .profile {
     z-index: 0;
 }
 .middle .stories .story:nth-child(1) {
-    background: url("../Images/car11.jpeg")
+    background: url("/Images/car11.jpeg")
     no-repeat center center/cover;
 }
 .middle .stories .story:nth-child(2) {
-    background: url("../images/car3.jpg")
+    background: url("/images/car3.jpg")
     no-repeat center center/cover;
 }
 

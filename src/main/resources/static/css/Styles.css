@@ -27,7 +27,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../images/');
+    background-image: url('/images/');
     background-size: cover;
     background-position: center;
     animation: bgZoomIn 4s ease-in-out 1 forwards;
@@ -39,7 +39,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../images/after.png');
+    background-image: url('/images/after.png');
     background-size: cover;
     background-position: top;
     transform: scale(2);
