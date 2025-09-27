@@ -1,124 +1,68 @@
-TrueConnections – Front-End Design
-TrueConnections is a social networking platform designed to connect users based on mutual interests such as travel, coding, food, and more. This repository contains the front-end design of the platform, built with HTML, CSS, and JavaScript.
+TrueConnection Social Networking Website
+A secure and scalable social networking web application built using Java Spring Boot with Spring Security for authentication and authorization, featuring a custom login page and user roles.
 
 Features
-Responsive Design: Optimized for both desktop and mobile devices.
+User authentication with Spring Security
 
-Interactive Pages: Includes a landing page, home page, login page, sign-up page, chat page, and profile page.
+Custom login page with stylish UI
 
-Theme Toggle: Light and dark modes for enhanced user comfort.
+In-memory user store for easy testing (admin and alice)
 
-Real-Time Chat Interface: Designed for seamless communication (front-end only, back-end integration required).
+Role-based access control (ADMIN and USER)
 
-Dynamic Feed: Displays posts, likes, and comments.
+Responsive frontend using HTML, CSS, and JavaScript
 
-Secure Authentication Forms: Login and sign-up pages with form validation.
+Simple and modular project structure
 
-Pages
-Landing Page: A welcoming page with a call-to-action for new users to sign up or log in.
-
-Home Page: A dynamic feed displaying posts, likes, and comments.
-
-Login Page: Secure user authentication with form validation.
-
-Sign-Up Page: User registration with interest selection and profile setup.
-
-Chat Page: Real-time messaging interface (front-end design only).
-
-My Profile Page: Interactive profile management with posts and connections.
-
-Theme Toggle: Switch between light and dark modes for better accessibility.
-
-Technologies Used
-HTML: Structure of the website.
-
-CSS: Styling and layout (using CSS Variables, Flexbox, and Grid).
-
-JavaScript: Interactive elements and theme toggle functionality.
-
-Icons: Unicons
-
-Fonts: Google Fonts – Poppins
-
-Screenshots
-Landing Page	Home Page	Chat Page
-Landing Page	Home Page	Chat Page
-Login Page	Sign-Up Page	My Profile Page
-Login Page	Sign-Up Page	My Profile Page
 Getting Started
 Prerequisites
-A modern web browser (Chrome, Firefox, Edge, etc.)
+Java Development Kit (JDK) 17 or above
+
+Maven or Gradle build tool
+
+Git installed for version control
 
 Installation
-Clone the repository:
+Clone this repository:
 
-bash
-Copy
-git clone https://github.com/arnavkoushal/TrueConnections-Frontend.git
-cd TrueConnections-Frontend
-Open the website:
+text
+git clone https://github.com/arnavkoushal/TrueConnection-Social-Networking-Website.git
+cd TrueConnection-Social-Networking-Website
+Build and run the project:
 
-Open the index.html file in your browser:
+Using Maven:
 
-bash
-Copy
-open index.html
-Explore the website:
+text
+./mvnw spring-boot:run
+Or using Gradle:
 
-Navigate through the landing page, sign up, log in, and start connecting!
+text
+./gradlew bootRun
+Open your browser at:
 
-Folder Structure
-Copy
-TrueConnections-Frontend/
-├── assets/                # Static assets (images, styles, scripts)
-│   ├── Images/            # Image files
-│   ├── Styles/            # CSS files
-│   └── Scripts/           # JavaScript files
-├── index.html             # Landing page
-├── home.html              # Home page
-├── login.html             # Login page
-├── signup.html            # Sign-up page
-├── chat.html              # Chat page
-├── myprofile.html         # My Profile page
-└── README.md              # Project documentation
-Key Features of the Front-End
-Reusable Components: Consistent design across all pages using reusable CSS classes and components.
+text
+http://localhost:8080/pages/login.html
+This is the custom login page.
 
-Responsive Layout: Flexbox and Grid for a clean and adaptive design.
+Default User Credentials
+Username	Password	Role
+admin	admin	ADMIN
+alice	alice	USER
+Project Structure
+text
+src/
+ └── main/
+       ├── java/com/TrueConnection/demo/
+       │       └── (Java source code and config files)
+       └── resources/
+               └── static/
+                      ├── assets/       (CSS, images, scripts)
+                      └── pages/        (HTML pages including login.html and home.html)
+Security Notes
+Custom login page served at /pages/login.html
 
-Theme Toggle: JavaScript-powered light and dark mode switching.
+Secure login processing at /login
 
-Form Validation: JavaScript-based validation for login and sign-up forms.
+Post-login redirection to /pages/home.html
 
-Interactive Design: Buttons, icons, and animations for a modern user experience.
-
-Contributing
-We welcome contributions! If you'd like to contribute to the front-end design of TrueConnections, please follow these steps:
-
-Fork the repository.
-
-Create a new branch (git checkout -b feature/YourFeatureName).
-
-Commit your changes (git commit -m 'Add some feature').
-
-Push to the branch (git push origin feature/YourFeatureName).
-
-Open a pull request.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgments
-Unicons for the beautiful icons.
-
-Google Fonts for the Poppins font.
-
-All contributors and users of TrueConnections!
-
-Contact
-For questions or feedback, please reach out:
-
-Email: arnavkoushal3011@gmail.com
-This project, **TrueConnections**, is based on an original project licensed under the MIT License.  
-Modifications and referance of Original work: 2023 Nia Ridania   have been taken  to customize the functionality and design in the home page
-
+All static resources publicly accessible without login
