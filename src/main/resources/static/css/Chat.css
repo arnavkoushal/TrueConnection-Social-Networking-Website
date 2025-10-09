@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== Color Variables ===== */
+:root {
+    --primary-color-hue: 252;
+
+    /* Light Theme Colors */
+    --color-lightness-light: 95%;
+    --color-white-lightness: 100%;
+    --color-light: hsl(var(--primary-color-hue), 30%, var(--color-lightness-light));
+    --color-white: hsl(var(--primary-color-hue), 30%, var(--color-white-lightness));
+    --color-grey: hsl(var(--primary-color-hue), 15%, 65%);
+    --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+
+    --color-dark: hsl(var(--primary-color-hue), 30%, 17%);
+    --color-black: hsl(var(--primary-color-hue), 30%, 10%);
+
+    --border-radius: 2rem;
+    --btn-padding: 0.6rem 2rem;
+}
+
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--color-light);
+    color: var(--color-dark);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== Navbar Styles ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: var(--color-white);
+    box-shadow: 0 2px 8px rgba(40,0,81,0.05);
+    z-index: 100;
+    border-radius: 0;
+}
+.navbar-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.7rem;
+    padding: 1.2rem 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+.nav-btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.3s, background 0.3s;
+    border: none;
+}
+.nav-btn:hover {
+    opacity: 0.8;
+}
+
+.profile-photo {
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 1.5rem;
+}
+.profile-photo img {
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+}
+
+/* ===== Main Center Layout ===== */
+.center-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 84px; /* space for fixed navbar */
+    box-sizing: border-box;
+    background: transparent;
+}
+
+#username-page, #chat-page {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    width: 370px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* ===== Inputs ===== */
+input[type="text"], .form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-grey);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background: var(--color-light);
+    color: var(--color-dark);
+    font-family: inherit;
+}
+
+/* ===== Buttons ===== */
+button, .accent, .primary {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+    background: var(--color-primary);
+    color: var(--color-white);
+    transition: opacity 0.3s;
+}
+
+button.accent, .accent {
+    background-color: #2196F3;
+}
+
+button.primary, .primary {
+    background-color: var(--color-primary);
+}
+
+button:hover, .accent:hover, .primary:hover {
+    opacity: 0.9;
+}
+
+/* ===== Utility ===== */
+.hidden {
+    display: none;
+}
+
+/* ===== Chat Container ===== */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-grey);
+    margin-bottom: 15px;
+    color: var(--color-dark);
+}
+
+.connecting {
+    font-style: italic;
+    color: var(--color-grey);
+    margin-bottom: 10px;
+}
+
+/* ===== Message Area ===== */
+#messageArea {
+    list-style: none;
+    padding: 0;
+    height: 250px;
+    overflow-y: auto;
+    border: 1px solid var(--color-grey);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background: var(--color-light);
+    color: var(--color-dark);
+}
+
+#messageArea li {
+    padding: 6px 10px;
+    border-bottom: 1px solid hsl(var(--primary-color-hue), 30%, 90%);
+}
+
+.input-group {
+    display: flex;
+}
+
+input#message {
+    flex-grow: 1;
+    margin-right: 8px;
+}
+
+/* ===== Dark Theme Overrides ===== */
+body[data-theme="dark"] {
+    --color-white: hsl(252, 30%, 10%); /* Dark background */
+    --color-light: hsl(0, 0%, 0%); /* Slightly lighter background */
+    --color-grey: hsl(252, 15%, 65%); /* Grey text */
+    --color-primary: hsl(0, 95%, 65%); /* Red accent */
+    --color-secondary: hsl(0, 100%, 90%); /* Light red for secondary elements */
+    --color-success: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, 95%); /* Light text for dark background */
+    --color-black: hsl(252, 30%, 100%); /* White text for dark background */
+
+    background: var(--color-white);
+    color: var(--color-dark);
+}
+
+body[data-theme="dark"] .navbar,
+body[data-theme="dark"] #username-page,
+body[data-theme="dark"] #chat-page {
+    background: var(--color-light);
+    box-shadow: none;
+    color: var(--color-dark);
+}
+
+body[data-theme="dark"] .nav-btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+body[data-theme="dark"] .nav-btn:hover {
+    background: hsl(0, 95%, 75%);
+}
+
+body[data-theme="dark"] .profile-photo img {
+    filter: brightness(0.8);
+}
+
+body[data-theme="dark"] input[type="text"],
+body[data-theme="dark"] .form-control {
+    background: var(--color-light);
+    border: 1px solid var(--color-grey);
+    color: var(--color-white);
+}
+
+body[data-theme="dark"] button,
+body[data-theme="dark"] .accent,
+body[data-theme="dark"] .primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+body[data-theme="dark"] button:hover,
+body[data-theme="dark"] .accent:hover,
+body[data-theme="dark"] .primary:hover {
+    background-color: hsl(0, 95%, 75%);
+}
+
+body[data-theme="dark"] #messageArea {
+    background: var(--color-light);
+    border: 1px solid var(--color-grey);
+    color: var(--color-white);
+}
+
+body[data-theme="dark"] #messageArea li {
+    border-bottom: 1px solid hsl(0, 30%, 30%);
+    color: var(--color-white);
+}
+
+body[data-theme="dark"] .chat-header {
+    border-bottom: 1px solid var(--color-grey);
+    color: var(--color-white);
+}
+
+body[data-theme="dark"] .connecting {
+    color: hsl(0, 0%, 70%);
+}
+
+/* ===== Theme Toggle Button ===== */
+#theme-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1000;
+    transition: background 0.3s, color 0.3s;
+}
+
+#theme-btn:hover {
+    opacity: 0.85;
+}

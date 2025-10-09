@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile - TrueConnections</title>
+    <link rel="stylesheet" href="/css/Myprofile.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+
+<header>
+    <h1>TrueConnections</h1>
+    <nav>
+        <ul>
+            <li><a href="/pages/home.html">Home</a></li>
+            <li><a href="/pages/Myprofile.html">Profile</a></li>
+            <li><a href="/pages/chat.html">Chat</a></li>
+            <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="/Images/car7.jpg" alt="Profile Picture" class="profile-pic" />
+            <h2 id="name">User</h2>
+            <p>@Username</p>
+            <p class="bio" id="bio">"Love connecting with new people and exploring new places!"</p>
+        </div>
+
+        <div class="profile-details">
+            <h3>Personal Information</h3>
+            <label for="email"><strong>Email:</strong></label>
+            <input type="text" id="email" value="User@example.com" disabled />
+
+            <label for="phone"><strong>Phone:</strong></label>
+            <input type="text" id="phone" value="+91 0000000000" disabled />
+
+            <label for="location"><strong>Location:</strong></label>
+            <input type="text" id="location" value="XYZ, INDIA" disabled />
+        </div>
+
+        <button class="btn btn-primary edit-profile-btn" onclick="enableEditing()">Edit Profile</button>
+        <button class="btn btn-primary save-profile-btn" onclick="saveChanges()" style="display: none;">Save Changes</button>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 TrueConnections. All rights reserved.</p>
+</footer>
+<div class="theme-toggle">
+    <button id="theme-btn">
+        <i class="uil uil-moon"></i> <!-- Moon icon for dark mode -->
+    </button>
+</div>
+
+<script src="/js/profile.js"></script>
+</body>
+</html>
